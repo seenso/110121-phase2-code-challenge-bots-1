@@ -47,7 +47,7 @@ function BotCard({ bot, handleClick, dischargeBot }) {
             <div className="ui center aligned segment basic">
               <button
                 className="ui mini red button"
-                onClick={() => dischargeBot(bot)}
+                onClick={(e) => dischargeBot(e, bot)}
               >
                 x
               </button>

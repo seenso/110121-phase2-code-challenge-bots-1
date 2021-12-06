@@ -24,7 +24,9 @@ function BotsPage() {
     setBotArmy(newBotArmy)
   };
 
-  function dischargeBot(bot) {
+  function dischargeBot(e, bot) {
+    e.stopPropagation();
+
     //remove from bot roster
     setBots(bots.filter(b => b.id !== bot.id));
 
