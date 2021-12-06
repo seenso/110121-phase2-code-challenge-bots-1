@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import YourBotArmy from "./YourBotArmy";
 import BotCollection from "./BotCollection";
 
+const url = "http://localhost:8002/bots";
+
 function BotsPage() {
   const [bots, setBots] = useState([]);
   const [botArmy, setBotArmy] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8002/bots").then(r => r.json()).then(data => setBots(data));
+    fetch(url).then(r => r.json()).then(data => setBots(data));
   }, []);
 
   function enlistBot(bot) {
